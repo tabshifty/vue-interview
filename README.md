@@ -1,5 +1,3 @@
-# csslayout
-
 ## Project setup
 ```
 npm install
