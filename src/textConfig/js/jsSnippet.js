@@ -1,0 +1,5 @@
+const jsCopy = {}
+
+export {
+    jsCopy
+}
