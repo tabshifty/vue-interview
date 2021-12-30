@@ -1,5 +1,0 @@
-const jsCopy = {}
-
-export {
-    jsCopy
-}

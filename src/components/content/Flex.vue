@@ -35,9 +35,6 @@ export default {
 <style scoped>
     .flex-part {
         position: relative;
-        margin: 0 auto;
-        width: 80%;
-        max-width: 1000px;
         text-align: left;
     }
     .description {

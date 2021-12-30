@@ -2,9 +2,6 @@
     <div class="codeblock">
         <highlightjs :languge="codeLanguge" :code="rawCode" />
     </div>
-    <div class="description">
-        Samples
-    </div>
 </template>
 
 <script>

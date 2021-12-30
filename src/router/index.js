@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import { cssContentRoutes, jsContentRoutes } from './config.js'
 import Home from '../views/Home.vue'
 // import Css from '../views/Css.vue'
 
@@ -13,20 +14,23 @@ const routes = [
     path: '/css',
     name: 'Css',
     component: () => import('../views/Css.vue'),
+    children: cssContentRoutes,
     meta: {
-      banner: 'Flex描述和常见问题'
+      banner: 'CSS常见问题列表'
     }
   },
 
-  
   {
-    path: '/js/copy',
-    name: 'copy',
+    path: '/javascript',
+    name: 'Javascript',
     component: () => import('../views/Javascript.vue'),
+    children: jsContentRoutes,
     meta: {
-      banner: 'Flex描述和常见问题'
+      banner: 'Javascript常见问题列表'
     }
   },
+  
+  
 ]
 
 const router = createRouter({

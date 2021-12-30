@@ -19,24 +19,22 @@ export default {
 <style scoped>
     .textContainer {
         font-size: 1rem;
-        background-color: rgb(193, 225, 226);
+        background-color: #f6f8fa;
         padding: 10px 20px;
+        border-radius: 3px;
         margin: 1rem 0;
     }
 
-    .textContainer >>> p {
+    .textContainer >>> p, .textContainer >>> ul, .textContainer >>> ol{
         margin: 0;
-        margin-top: 5px;
+        margin-top: .8rem;
         padding: 0;
     }
     .textContainer >>> p:first-child {
         margin-top: 0;
     }
-    .textContainer >>> ul {
-        margin: 0;
-        padding: 0;
-    }
     .textContainer >>> li  {
+        margin-bottom: .2rem;
         margin-left: 1rem;
     }
 </style>

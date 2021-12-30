@@ -21,23 +21,30 @@ export default {
 }
 </script>
 <style>
+@font-face {
+  font-family: 'iconfont';  /* Project id 3104054 */
+  src: url('//at.alicdn.com/t/font_3104054_vanorr6yswe.woff2?t=1640851961408') format('woff2'),
+       url('//at.alicdn.com/t/font_3104054_vanorr6yswe.woff?t=1640851961408') format('woff'),
+       url('//at.alicdn.com/t/font_3104054_vanorr6yswe.ttf?t=1640851961408') format('truetype');
+}
+
 html, body {
   font-size: 16px;
   margin: 0;
   padding: 0;
 }
-
+ 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
+  width: 100%;
   /* background-color: rgb(87, 79, 79); */
 }
 
 #nav {
   position: relative;
-  height: 1px;
+  width: 100%;
   /* overflow: hidden; */
 } 
 
@@ -47,14 +54,16 @@ html, body {
 }
 
 #nav a.router-link-exact-active {
-  color: #42b983;
+  color: #6aa88c;
 }
 
-/* pre {
-  border-left: 6px solid #2b6c92;
+i.iconfont {
+    font-family: 'iconfont' !important;;
+    font-size:1.6rem;
+    font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
 }
-code {
-  font-family: Consolas, Monaco, monospace;
-} */
 
 </style>
