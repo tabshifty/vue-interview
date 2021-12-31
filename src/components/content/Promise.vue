@@ -1,17 +1,16 @@
-module.exports =
-`<template>
-    <div class="$[]$Box">
-        <Parse :contents="$[]$Content" />
+<template>
+    <div class="promiseBox">
+        <Parse :contents="promiseContent" />
     </div>
 </template>
 <script>
 import Parse from '@/components/common/Parse.vue'
-import $[]$Content from '@/textConfig/http/$[]$.js'
+import promiseContent from '@/textConfig/http/promise.js'
 
 export default {
     data() {
         return {
-            $[]$Content
+            promiseContent
         }
     },
     components: {
@@ -19,4 +18,3 @@ export default {
     }
 }
 </script>
-`

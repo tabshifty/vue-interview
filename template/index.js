@@ -6,7 +6,7 @@
 */
 const fs = require('fs')
 const path = require('path')
-// const tpl = require('template.js')
+const tpl = require('./template.js')
 function isDirectory(path) {
     return fs.lstatSync(path).isDirectory()
 }
@@ -27,16 +27,16 @@ function readFiles(fileArray, mainDir) {
 const workDir = '../src/textconfig'
 const arr = []
 readFiles(arr, workDir)
-// const data = arr.map(item => `[${item}]`).join(';')
-// fs.writeFileSync('./store.txt', data)
-// console.log(data)
 
 const data = fs.readFileSync('./store.txt',{encoding: 'utf8'}).split(';')
-console.log(data)
-const newfile = arr.filter(item => !data.includes(`[${item}]`) && !item.includes('list')).
+const newfile = arr.filter(item => !data.includes(`[${item}]`) && !item.includes('list'))
 
-// if(newfile.length) {
-//     newfile.forEach(item => {
-//         fs.writeFileSync('')
-//     })
-// }
+if(newfile.length) {
+    newfile.forEach(item => {
+        const filename = path.basename(item,'.js')
+        const upperFilename = filename.slice(0,1).toUpperCase() + filename.slice(1)
+        fs.writeFileSync(`../src/components/content/${upperFilename}.vue`, tpl.replace(/\$\[\]\$/g, filename))
+    })
+    data.push(...newfile.map(item => `[${item}]`))
+    fs.writeFileSync('./store.txt', data.join(';'))
+}

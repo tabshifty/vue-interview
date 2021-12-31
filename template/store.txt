@@ -1,1 +1,1 @@
-[..\src\textconfig\css\cssSnippet.js];[..\src\textconfig\css\list.js];[..\src\textconfig\http\cache.js];[..\src\textconfig\http\list.js];[..\src\textconfig\js\copy.js];[..\src\textconfig\js\list.js]
+[..\src\textconfig\css\cssSnippet.js];[..\src\textconfig\css\list.js];[..\src\textconfig\http\cache.js];[..\src\textconfig\http\list.js];[..\src\textconfig\js\copy.js];[..\src\textconfig\js\list.js];[..\src\textconfig\js\promise.js]

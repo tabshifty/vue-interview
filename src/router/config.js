@@ -6,6 +6,14 @@ const jsContentRoutes = [
             banner: '深拷贝与浅拷贝'
         }
     },
+    {
+        path: 'promise',
+        component: () => import('@/components/content/Promise.vue'),
+        meta: {
+            banner: 'Promise'
+        }
+    },
+]
 ]
 
 const cssContentRoutes = [
