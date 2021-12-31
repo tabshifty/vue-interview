@@ -1,3 +1,11 @@
+### 主要配置
+
+`textConfig`里设置主要的内容   
+
+`router/config`里设置次级路由
+
+
+
 ## Project setup
 ```
 npm install
@@ -18,5 +26,3 @@ npm run build
 npm run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

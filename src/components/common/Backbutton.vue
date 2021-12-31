@@ -7,7 +7,7 @@
 </template>
 
 <script>
-
+const scrollGap = 150
 export default {
     name: 'Backbutton',
     data() {
@@ -26,7 +26,7 @@ export default {
         this.scrollTop = window.scrollY
         const setScrollTop =() => {
             console.log(this.scrollTop, window.scrollY)
-            if ((this.scrollTop > 100 && window.scrollY > 100) || (this.scrollTop < 100 && window.scrollY < 100)) return
+            if ((this.scrollTop > scrollGap && window.scrollY > scrollGap) || (this.scrollTop < scrollGap && window.scrollY < scrollGap)) return
             this.scrollTop = window.scrollY
         }
         window.onscroll = setScrollTop
@@ -38,7 +38,7 @@ export default {
     },
     computed: {
         show(){
-            return this.scrollTop > 100 && (this.scrollHeight - this.height) > 100
+            return this.scrollTop > scrollGap && (this.scrollHeight - this.height) > scrollGap
         }
     },
     methods: {

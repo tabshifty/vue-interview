@@ -1,31 +1,39 @@
 <template>
   <div class="home">
-    <!-- <div>CSS</div>
-    <div>Javascript</div>
-    <div>Vue</div> -->
-    <h1>前端常见问题收集</h1>
+    <h4>前端常见问题收集</h4>
+    <p class="split"></p>
     <ul class="link">
       <li v-for="item in cat" :key="item">
         <router-link :to="`/${item}`" >{{item}}</router-link>
       </li>
     </ul>
-    <!-- <div class="item"><router-link to="/css" >CSS</router-link></div>
-    <div class="item"><router-link to="/javascript" >Javascript</router-link></div>
-    <div class="item"><router-link to="/vue" >Vue</router-link></div>
-    <div class="item"><router-link to="/http" >HTTP</router-link></div> -->
+    <footer>
+      <p class="contentBox">Powerd by Vue</p>
+    </footer>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-// import Flex from '@/components/flex/Flex.vue'
-
+const setVh = function() {
+  // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+  let vh = window.innerHeight * 0.01;
+  // Then we set the value in the --vh custom property to the root of the document
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+  console.log('Hello')
+}
 export default {
   name: 'Home',
   data() {
     return {
       category: ['css', 'javascript', 'vue', 'http']
     }
+  },
+  mounted() {
+    this.$nextTick(()=>{
+      setVh()
+    })
+    window.onresize = setVh
   },
   computed: {
     cat() {
@@ -41,23 +49,45 @@ export default {
     box-sizing: border-box;
     font-size: 1rem;
     padding: 1rem;
-    box-sizing: border-box;
+    padding-bottom: 20rem;
+    min-height: 100vh;
+    min-height: calc(var(--vh, 1vh) * 100);
   }
-  ul.link {
-    /* position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 2rem; */
-  }
+  
   ul, li{
     overflow: hidden;
     margin: 0;
     padding: 0;
   }
-  
-  ul.link, h1 {
+  h4 {
+    float: right;
+    margin-right: 9%;
+    height: 3rem;
+    padding: 1rem;
+    line-height: 3rem;
+    border: 1px solid black;
+    outline: 5px solid rgb(0, 0, 0);
+    outline-offset: 5px;
+  }
+  h4::after {
+    content: '';
+    width: 1px;
+    clear: both;
+  }
+
+  p.split {
+    margin-top: 10rem;
+    min-height: 1rem;
+    /* background: #191c1f; */
+  }
+
+  ul.link {
+    position: absolute;
     width: 80%;
+    left: 0;
+    right: 0;
     margin: 0 auto;
+    bottom: 7rem;
   }
   ul.link > li {
     text-align: left;
@@ -66,6 +96,18 @@ export default {
     font-weight: bold;
     line-height: 100%;
   }
+
+  footer {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    height: 5rem;
+    left: 0;
+    bottom: 0;
+    background-color: #d0d9e2;
+    vertical-align: bottom;
+  }
+
   a:hover, a:link, a:visited, a:active {
     color: #191c1f;
   }

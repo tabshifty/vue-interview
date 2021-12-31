@@ -1,8 +1,6 @@
 <template>
   <div id="nav">
     <Banner v-if="showBanner" :content="$route.meta.banner" />
-    <!-- <router-link to="/">Home</router-link> | -->
-    <!-- <router-link to="/about">About</router-link> -->
    </div>  
     <router-view /> 
 </template>

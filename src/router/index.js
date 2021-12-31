@@ -1,5 +1,5 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import { cssContentRoutes, jsContentRoutes } from './config.js'
+import { createRouter, createWebHashHistory } from 'vue-router'
+import { cssContentRoutes, jsContentRoutes, httpContentRoutes } from './config.js'
 import Home from '../views/Home.vue'
 // import Css from '../views/Css.vue'
 
@@ -29,12 +29,20 @@ const routes = [
       banner: 'Javascript常见问题列表'
     }
   },
-  
+  {
+    path: '/http',
+    name: 'Http',
+    component: () => import('../views/Http.vue'),
+    children: httpContentRoutes,
+    meta: {
+      banner: 'http常见问题列表'
+    }
+  },
   
 ]
 
 const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
+  history: createWebHashHistory(),
   routes
 })
 
