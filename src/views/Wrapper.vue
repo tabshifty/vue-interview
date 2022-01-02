@@ -13,7 +13,7 @@
             </ul>
         </p>
         <router-view></router-view>
-        <div class="backBtn" v-if="!show"><router-link :to="$route.matched[0].path" tag="button">Back to list</router-link></div>
+        <!-- <div class="backBtn" v-if="!show"><router-link :to="$route.matched[0].path" tag="button">Back to list</router-link></div> -->
         <Backbutton />
     </div>
 </template>
@@ -67,7 +67,7 @@ export default {
         width: 80%;
         max-width: 1000px;
         margin-top: 3.2rem;
-        padding-bottom: 2rem;
+        padding-bottom: 6rem;
     }
     .backBtn {
         display: inline-block;

@@ -5,7 +5,7 @@
 </template>
 <script>
 import Parse from '@/components/common/Parse.vue'
-import promiseContent from '@/textConfig/http/promise.js'
+import promiseContent from '@/textConfig/js/promise.js'
 
 export default {
     data() {

@@ -18,27 +18,19 @@ export default {
         }
     },
     mounted() {
-        // this.scrollTop = this.scrollTop > 200 && window.scrollY > 200 ? this.scrollTop : window.scrollY
-        this.$nextTick(() => {
-            this.height = document.documentElement.clientHeight
-            this.scrollHeight = document.documentElement.scrollHeight
-        })
         this.scrollTop = window.scrollY
         const setScrollTop =() => {
-            console.log(this.scrollTop, window.scrollY)
             if ((this.scrollTop > scrollGap && window.scrollY > scrollGap) || (this.scrollTop < scrollGap && window.scrollY < scrollGap)) return
             this.scrollTop = window.scrollY
         }
         window.onscroll = setScrollTop
         window.onresize = () => {
             setScrollTop()
-            this.height = document.documentElement.clientHeight
-            this.scrollHeight = document.documentElement.scrollHeight
         }
     },
     computed: {
         show(){
-            return this.scrollTop > scrollGap && (this.scrollHeight - this.height) > scrollGap
+            return this.scrollTop > scrollGap && (document.documentElement.scrollHeight - document.documentElement.clientHeight) > scrollGap
         }
     },
     methods: {

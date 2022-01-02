@@ -14,7 +14,6 @@ const jsContentRoutes = [
         }
     },
 ]
-]
 
 const cssContentRoutes = [
     {

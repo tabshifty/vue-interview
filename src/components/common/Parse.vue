@@ -111,7 +111,7 @@ export default {
 
 
     p:deep() img {
-        width: 100%;
+        max-width: 100%;
     }
 
 </style>

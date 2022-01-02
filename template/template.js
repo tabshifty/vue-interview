@@ -6,7 +6,7 @@ module.exports =
 </template>
 <script>
 import Parse from '@/components/common/Parse.vue'
-import $[]$Content from '@/textConfig/http/$[]$.js'
+import $[]$Content from '@/textConfig/$[path]$'
 
 export default {
     data() {

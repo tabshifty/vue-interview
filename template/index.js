@@ -1,8 +1,5 @@
 /*
 读取文件，读取内容，创建文件
-
-
-
 */
 const fs = require('fs')
 const path = require('path')
@@ -35,7 +32,10 @@ if(newfile.length) {
     newfile.forEach(item => {
         const filename = path.basename(item,'.js')
         const upperFilename = filename.slice(0,1).toUpperCase() + filename.slice(1)
-        fs.writeFileSync(`../src/components/content/${upperFilename}.vue`, tpl.replace(/\$\[\]\$/g, filename))
+        const fileArr = item.split(path.sep)
+        console.log(fileArr)
+        const filterPath = fileArr.filter((item,index, arr) => index >= (arr.length - 2)).join('/')
+        fs.writeFileSync(`../src/components/content/${upperFilename}.vue`, tpl.replace(/\$\[\]\$/g, filename).replace('$[path]$', filterPath))
     })
     data.push(...newfile.map(item => `[${item}]`))
     fs.writeFileSync('./store.txt', data.join(';'))

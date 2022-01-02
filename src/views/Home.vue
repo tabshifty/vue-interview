@@ -8,7 +8,11 @@
       </li>
     </ul>
     <footer>
-      <p class="contentBox">Powerd by Vue</p>
+      <div>
+        <p class="contentBox">Created by Tabshifty</p>
+        <p class="contentBox">Powerd by Vue</p>
+        <p class="contentBox date">@2021-12</p>
+      </div>
     </footer>
   </div>
 </template>
@@ -20,7 +24,6 @@ const setVh = function() {
   let vh = window.innerHeight * 0.01;
   // Then we set the value in the --vh custom property to the root of the document
   document.documentElement.style.setProperty('--vh', `${vh}px`);
-  console.log('Hello')
 }
 export default {
   name: 'Home',
@@ -98,15 +101,30 @@ export default {
   }
 
   footer {
+    display: flex;
+    flex-wrap: wrap;
     position: absolute;
-    text-align: center;
+    text-align: left;
     width: 100%;
     height: 5rem;
     left: 0;
     bottom: 0;
     background-color: #d0d9e2;
     vertical-align: bottom;
+    justify-content: center;
+    align-items: center;
   }
+  footer>div {
+    width: 80%;
+  }
+  footer p {
+    margin: .2rem 0;
+    font-size: .8rem;
+    color: rgb(109, 96, 96);
+  }
+  /* footer >p.date {
+    
+  } */
 
   a:hover, a:link, a:visited, a:active {
     color: #191c1f;
