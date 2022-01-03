@@ -8,6 +8,7 @@
 
 <script>
 const scrollGap = 150
+let setScrollTop
 export default {
     name: 'Backbutton',
     data() {
@@ -19,14 +20,16 @@ export default {
     },
     mounted() {
         this.scrollTop = window.scrollY
-        const setScrollTop =() => {
+        setScrollTop =() => {
             if ((this.scrollTop > scrollGap && window.scrollY > scrollGap) || (this.scrollTop < scrollGap && window.scrollY < scrollGap)) return
             this.scrollTop = window.scrollY
         }
-        window.onscroll = setScrollTop
-        window.onresize = () => {
-            setScrollTop()
-        }
+        window.addEventListener('scroll', setScrollTop)
+        window.addEventListener('resize', setScrollTop)
+    },
+    beforeUnmount() {
+        window.removeEventListener('scroll', setScrollTop)
+        window.removeEventListener('resize', setScrollTop)
     },
     computed: {
         show(){

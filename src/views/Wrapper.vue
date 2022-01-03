@@ -66,7 +66,7 @@ export default {
         margin: 0 auto;
         width: 80%;
         max-width: 1000px;
-        margin-top: 3.2rem;
+        margin-top: 4rem;
         padding-bottom: 6rem;
     }
     .backBtn {

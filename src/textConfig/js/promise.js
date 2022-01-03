@@ -1,3 +1,8 @@
+/*
+    @Banner: ;
+    @content:;
+    @path: ;
+*/
 export default [
 `h3$$Promise需要注意的几个点`,
 `markdown$$ * Promise共有三种状态，也只能是三种状态的一种

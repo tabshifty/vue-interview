@@ -1,8 +1,8 @@
 <template>
   <div id="nav">
     <Banner v-if="showBanner" :content="$route.meta.banner" />
-   </div>  
-    <router-view /> 
+   </div> 
+    <router-view />
 </template>
 <script>
 import Banner from './components/common/Banner.vue'
