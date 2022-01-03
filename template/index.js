@@ -7,44 +7,6 @@ const path = require('path')
 const addListConfig = require('./addList')
 const addRouteConfig = require('./addRoutes')
 const tpl = require('./template.js')
-/*
-function isDirectory(path) {
-    return fs.lstatSync(path).isDirectory()
-}
-
-function readFiles(fileArray, mainDir) {
-    if (isDirectory(mainDir)) {
-        const files = fs.readdirSync(mainDir)
-        if (!files) return fileArray.push(mainDir)
-        for (let i=0; i<files.length;i++) {
-            const file = files[i]
-            readFiles(fileArray, path.join(mainDir, file))
-        }
-    } else {
-        fileArray.push(mainDir)
-    }
-    
-}
-const workDir = '../src/textconfig'
-const arr = []
-readFiles(arr, workDir)
-
-const data = fs.readFileSync('./store.txt',{encoding: 'utf8'}).split(';')
-const newfile = arr.filter(item => !data.includes(`[${item}]`) && !item.includes('list'))
-
-if(newfile.length) {
-    newfile.forEach(item => {
-        const filename = path.basename(item,'.js')
-        const upperFilename = filename.replace(/^\D/i, function(matched){ return matched.toUpperCase()})
-        const fileArr = item.split(path.sep)
-        const filterPath = fileArr.filter((item,index, arr) => index >= (arr.length - 2)).join('/')
-        fs.writeFileSync(`../src/components/content/${upperFilename}.vue`, tpl.replace(/\$\[\]\$/g, filename).replace('$[path]$', filterPath))
-    })
-    data.push(...newfile.map(item => `[${item}]`))
-    fs.writeFileSync('./store.txt', data.join(';'))
-}
-
-*/
 
 /* filter files which are newer*/
 const workDir = '../src/textconfig'
@@ -75,7 +37,7 @@ const filteredFiles = allFiles.filter(item => !store.includes(`[${item}]`) && !i
 
 /* get route path, banner and content config*/
 function trimComment(str) {
-    return str.replace(/^(\*)|(\n)+|(\s)+|(\*)$/g, function(matched) {
+    return str.replace(/^(\*)|(\n)+|(\s)+|(\*)$/g, function() {
         return ''
     })
 }
