@@ -1,5 +1,5 @@
 module.exports = {
   // options...
-    publicPath: '/interview/'
-    // publicPath:'/'
+    // publicPath: '/interview/'
+    publicPath:'/'
 }

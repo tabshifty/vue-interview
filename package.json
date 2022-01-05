@@ -29,6 +29,7 @@
   },
   "eslintConfig": {
     "root": true,
+    "ignorePatterns": ["**/template/*.js"],
     "env": {
       "node": true
     },

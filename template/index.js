@@ -61,18 +61,18 @@ if(filteredFiles.length) {
         const filename = path.basename(iPath,'.js')
         const upperFilename = filename.replace(/^\D/i, function(matched){ return matched.toUpperCase()})
         const fileArr = iPath.split(path.sep)
-        const filetype = fileArr.filter((item,index, arr) => index >= (arr.length - 2)).join('/')
+        const filetype = fileArr.filter((item,index, arr) => index >= (arr.length - 2))
 
         const rData = fs.readFileSync(iPath, 'utf8')
         const rawConfig = rData .match(/\*([^*]|[\r\n]|(\*+([^*/]|[\r\n])))*\*+/)[0]
         const config = getConfig(rawConfig)
 
         _pChain = pChain.then(() => {
-            fs.writeFileSync(`../src/components/content/${upperFilename}.vue`, tpl.replace(/\$\[\]\$/g, filename).replace('$[path]$', filetype))
+            fs.writeFileSync(`../src/components/content/${upperFilename}.vue`, tpl.replace(/\$\[\]\$/g, filename).replace('$[path]$', filetype.join('/')))
         }).then(() => {
-            addRouteConfig(filetype, config.path, upperFilename, config.banner)
+            addRouteConfig(filetype[0], config.path, upperFilename, config.banner)
         }).then(() => {
-            addListConfig(filetype, config.path, config.content)
+            addListConfig(filetype[0], config.path, config.content)
         })
         
 

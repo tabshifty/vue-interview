@@ -1,5 +1,5 @@
 /*
-    @Banner: ;
+    @banner: ;
     @content:;
     @path: ;
 */
